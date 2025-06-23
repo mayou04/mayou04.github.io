@@ -1,0 +1,98 @@
+:root {
+    --text-color: rgb(212, 212, 212); 
+    --background-color: rgb(26, 26, 26);
+    --selected-color: rgb(1, 172, 1);
+    --trans-bg-color: rgba(26, 26, 26, 0.9);
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0px;
+    color: var(--text-color);
+    font-size: 1.25em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    position: fixed;
+    justify-content: flex-end;
+    overflow: hidden;
+    background-color: var(--trans-bg-color);
+    width: 100%;
+    top: 0;
+}
+
+.links {
+    padding: 20px;
+    padding-right: 50px;
+}
+
+.current {
+    color: var(--selected-color);
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 2px;
+}
+
+.tab {
+    padding: 10px;
+    display: inline-block;
+}
+
+a:hover {
+    color: var(--selected-color);
+    transform: translateY(-5%);
+}
+
+a:active {
+    transform: translateY(5%);
+}
+
+.content {
+    /* padding-left: 150px;
+    padding-right: 150px; */
+    /*pad content to be offset a bit to the right*/
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.intro {
+    max-width: 540px;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    top: 100px;
+    /* background-color:blueviolet; */
+    /* border: solid; */
+    /*pad content to be a bit down*/
+}
+
+.text {
+    padding-top: 100px;
+    padding-left: 100px;
+}
+
+/* #about, #projects {
+    background-color: antiquewhite;
+    color: black;
+} */
+
+.link {
+    color: var(--selected-color);
+    text-decoration-line: underline;
+}
