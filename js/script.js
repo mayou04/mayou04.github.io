@@ -25,3 +25,13 @@ const observer = new IntersectionObserver(entries => {
         }
     });
 });
+
+// Flip effect for contact box
+window.addEventListener('DOMContentLoaded', () => {
+    var flipBox = document.getElementById('contactFlipBox');
+    if (flipBox) {
+        flipBox.addEventListener('click', function() {
+            flipBox.classList.toggle('flipped');
+        });
+    }
+});
