@@ -14,6 +14,8 @@
 <!--How to scroll lock in-->
 <!--Spacing to separate pages
     Horizontal bar-->
+<!--Mobile Website-->
+<!--Navbar disappear once zoomed in enough-->
 <body>
     <div class="navbar">
         <div class="links">
@@ -25,8 +27,8 @@
         </div>
     </div>
     <div class="content">
-        <section id="home" style="background-color: azure;">
-            <div class="text">
+        <section id="home">
+            <div class="container">
                 <div>
                     <h1>Welcome to my Portfolio</h1>
                 </div> 
@@ -46,7 +48,7 @@
             </div>
         </section>
         <section id="about">
-            <div class="text">
+            <div class="container">
                 <h1>About Me</h1>
                 <hr>
                 <div>
@@ -55,20 +57,22 @@
                         <br><br>
                         In my free time, I like playing video games, editing and watching videos, cooking, playing the ukelele, and drawing.
                     </p>
-                    <img src="media/professional_photo.jpg" style="height:250px">
+                    <!-- <img src="media/professional_photo.jpg" style="height:250px"> -->
+                    <img src="missing.png" alt="" style="height:250px; width:250px;">
                     <!--Images could be cycling-->
                     <!--Put drawings as decoration-->
                 </div>
             </div>
         </section>
         <section id="work">
-            <div class="text">
+            <div class="container">
                 <div>
                     <h1>Work</h1>
                     <hr>
                 </div>
                 <div>
                     <!--Maybe like a dropdown/table kind stuff with title and u click -> description-->
+                    <!--https://www.w3schools.com/howto/howto_js_tabs.asp-->
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore earum non sint esse officiis? Praesentium, nisi. Nisi dicta tempore mollitia culpa magnam natus at eveniet ex, voluptatem excepturi? Repudiandae, illo.
                     </p>
@@ -81,12 +85,13 @@
             </div>
         </section>
         <section id="projects">
-            <div class="text">
+            <div class="container">
                 <div>
                     <h1>Projects</h1>
                     <hr>
                 </div>
                 <div>
+                    <!--Interactive Project Part-->
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, distinctio. Ipsa facilis doloremque nam obcaecati nesciunt eum sed unde. Obcaecati eius suscipit, a accusamus nihil ipsa aliquam provident odit fuga.
                     </p>
@@ -100,17 +105,20 @@
             </div>
         </section>
         <section id="contact">
-            <div class="text">
+            <div class="container">
+                <!--Maybe make it a box in the center-->
                 <div>
-                    <h1>Reach out to me</h1>
+                    <h1>My Contact Information</h1>
                     <hr>
                 </div>
                 <div>
                     <p>
                         <br> <br>
-                        LinkedIn: <a class="link" href="https://www.linkedin.com/in/martin-you04/">linkedin.com/in/martin-you04/</a>
+                        LinkedIn: <a class="link" target="_blank" href="https://www.linkedin.com/in/martin-you04">linkedin.com/in/martin-you04</a>
                         <br> <br>
                         Email: <a class="link" href="mailto: martin.you04@gmail.com">martin.you04@gmail.com</a> 
+                        <br> <br>
+                        GitHub: <a class="link" target="_blank" href="https://github.com/mayou04">github.com/mayou04</a>
                         <br>
                     </p>
                 </div>                
