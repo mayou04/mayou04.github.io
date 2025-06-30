@@ -1,15 +1,17 @@
 :root {
-    --text-color: rgb(212, 212, 212); 
+    --text-color: rgb(223, 223, 223); 
     --background-color: rgb(26, 26, 26);
     --selected-color: rgb(1, 172, 1);
-    --trans-bg-color: rgba(26, 26, 26, 0.9);
+    --trans-bg-color: rgba(26, 26, 26, 0.801);
+    --subtitle-color: rgb(158, 158, 158);
+    --pre-title-color: #64ff79;
 }
 
 body {
     background-color: var(--background-color);
     margin: 0px;
     color: var(--text-color);
-    font-size: 1.25em;
+    font-size: clamp(1rem, .75vw, 1.5rem);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -25,7 +27,7 @@ a {
     overflow: hidden;
     background-color: var(--trans-bg-color);
     width: 100%;
-    top: 0;
+    top: 0;     
 }
 
 .links {
@@ -55,31 +57,49 @@ a:active {
 }
 
 h1 {
-    font-size: 25px;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--pre-title-color)
 }
 
 h2 {
-    font-size: 50px;
+    font-size: clamp(2rem, 3vw, 3.5rem);
     font-weight: bolder;
+    margin: 0px;
 }
 
-.intro {
-    max-width: 540px;
+h3 {
+    font-size: clamp(2rem, 3vw, 3.5rem);
+    font-weight: normal;
+    margin: 0px;
+    color: var(--subtitle-color);
+}
+
+.intro, .about, .projects {
+    max-width:30vw;
 }
 
 section {
-    padding-top: 25px;
+    padding-top: 88px;
     height: 100vh;
     width: 100vw;
     min-height: 500px;
     min-width: 500px;
+    display: flex;
+    align-items: center;
     /* border: solid; */
     /*pad content to be a bit down*/
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0px;
 }
 
 .container {
-    padding: 50px;
-    
+    padding: 75px;
+    /* border: 2px solid rgba(255, 255, 255, 0.582); */
+    border-radius: 18px; /* optional, for rounded corners */
+
     /* background-color:blueviolet; */
 }
 
@@ -97,8 +117,8 @@ section {
     height: 100%;
 }
 .contact-flip-box {
-    width: 350px;
-    height: 350px;
+    width: 1vw;
+    height: 1vw;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s cubic-bezier(.4,2,.6,1);
