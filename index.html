@@ -21,15 +21,15 @@
     <div class="navbar">
         <!--Navbar not take whole screen?-->
         <div class="links">
-            <a class="tab" href="#home">Home</a>
-            <a class="tab" href="#about">About</a>
-            <a class="tab" href="#work">Work</a>
-            <a class="tab" href="#projects">Projects</a>
-            <a class="tab" href="#contact">Contact</a>
+            <a class="view" href="#home">Home</a>
+            <a class="view" href="#about">About</a>
+            <a class="view" href="#work">Work</a>
+            <a class="view" href="#projects">Projects</a>
+            <a class="view" href="#contact">Contact</a>
         </div>
     </div>
     <div class="content">
-        <section id="home">
+        <section id="home" class="no-table">
             <div class="container">
                 <div>
                     <h1>Welcome to my Portfolio! I'm </h1>
@@ -48,12 +48,12 @@
                 </div>
             </div>
         </section>
-        <section id="about">
+        <section id="about" class="no-table">
             <div class="container">
                 <h1>About Me</h1>
                 <hr>
                 <div>
-                    <p>
+                    <p class="about">
                         I have experience in IT Customer Service, leading group projects, working as a team, and yea... Software Engineering.
                         I am interested in the field of Software Engineering. Specializing in Cybersecurity. I love solving logic puzzles and thinking outside the box. 
                         <br><br>
@@ -72,21 +72,53 @@
                     <h1>Work</h1>
                     <hr>
                 </div>
-                <div>
-                    <!--Maybe like a dropdown/table kind stuff with title and u click -> description-->
-                    <!--https://www.w3schools.com/howto/howto_js_tabs.asp-->
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore earum non sint esse officiis? Praesentium, nisi. Nisi dicta tempore mollitia culpa magnam natus at eveniet ex, voluptatem excepturi? Repudiandae, illo.
-                    </p>
-                    <ul>
-                        <li>AT&T</li>
-                        <li>DoIT</li>
-                        <li>HST</li>
-                    </ul>
+                <div class="work-tabs-wrapper">
+                    <div class="tab">
+                        <!--Maybe like a dropdown/table kind stuff with title and u click -> description-->
+                        <!--https://www.w3schools.com/howto/howto_js_tabs.asp-->
+                        <button class="tablinks active" onclick="openTab(event, 'att')">AT&T</button>
+                        <button class="tablinks" onclick="openTab(event, 'doit')">Department of IT, SBU</button>
+                        <button class="tablinks" onclick="openTab(event, 'hst')">Campus Residences, SBU</button>
+                    </div>
+                    <div id="att" class="tabcontent">
+                        <h4>Cybersecurity Intern @ Cyber Security Data Analytics, AT&T</h4>
+                        <span>Jun 2025 - Present</span>
+                        <p class="work">
+                            I am currently interning at AT&T as a Cybersecurity AI Intern. My role involves working on various projects related to cybersecurity and artificial intelligence, gaining hands-on experience in the field.
+                            <ul>
+                                <li>Cybersecurity AI Intern</li>
+                                <li>Working on various projects related to cybersecurity and artificial intelligence</li>
+                                <li>Gaining hands-on experience in the field</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div id="doit" class="tabcontent">
+                        <h4>Student Technologist @ Stony Brook University</h4>
+                        <span>Jun 2024 - Present</span>
+                        <p class="work">
+                            I worked at the Department of Information Technology (DoIT) at Stony Brook University, where I provided IT customer service and support to students and faculty, helping them with various technical issues.
+                            <ul>
+                                <li>IT Customer Service</li>
+                                <li>Technical Support</li>
+                                <li>Assisting students and faculty with technical issues</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div id="hst" class="tabcontent">
+                        <h4>Health and Safety Worker @ Stony Brook University</h4>
+                        <span>Aug 2023 - Present</span>
+                        <p class="work">
+                            As a Health and Safety Worker, I was responsible for ensuring the safety and well-being of students and staff on campus. This involved conducting safety inspections, assisting in emergency response efforts, and promoting health and safety awareness.
+                            <ul>
+                                <li>Conducting safety inspections</li>
+                                <li>Assisting in emergency response efforts</li>
+                                <li>Promoting health and safety awareness</li>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="projects">
+        <section id="projects" class="no-table">
             <div class="container">
                 <div>
                     <h1>Projects</h1>
@@ -94,7 +126,7 @@
                 </div>
                 <div>
                     <!--Interactive Project Part-->
-                    <p>
+                    <p class="projects">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, distinctio. Ipsa facilis doloremque nam obcaecati nesciunt eum sed unde. Obcaecati eius suscipit, a accusamus nihil ipsa aliquam provident odit fuga.
                     </p>
                     <ul>

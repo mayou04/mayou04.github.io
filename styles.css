@@ -42,7 +42,7 @@ a {
     text-decoration-thickness: 2px;
 }
 
-.tab {
+.view {
     padding: 10px;
     display: inline-block;
 }
@@ -68,31 +68,29 @@ h2 {
 }
 
 h3 {
-    font-size: clamp(2rem, 3vw, 3.5rem);
+    font-size: clamp(1.5rem, 2vw, 3rem);
     font-weight: normal;
     margin: 0px;
     color: var(--subtitle-color);
 }
 
-.intro, .about, .projects {
+.intro, .about, .work, .projects {
     max-width:30vw;
 }
 
-section {
-    padding-top: 88px;
+section{
     height: 100vh;
     width: 100vw;
-    min-height: 500px;
     min-width: 500px;
+    min-height: 600px;
+    padding: 0px;
+}
+
+section {
     display: flex;
     align-items: center;
-    /* border: solid; */
-    /*pad content to be a bit down*/
     justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
-    height: 100vh;
-    padding: 0px;
 }
 
 .container {
@@ -100,13 +98,83 @@ section {
     /* border: 2px solid rgba(255, 255, 255, 0.582); */
     border-radius: 18px; /* optional, for rounded corners */
 
-    /* background-color:blueviolet; */
 }
 
-/* #about, #projects {
-    background-color: antiquewhite;
-    color: black;
-} */
+.link {
+    /* color: var(--selected-color); */
+    text-decoration-line: underline;
+}
+
+/* Work Section Styles */
+
+.work-tabs-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem; /* space between tabs and content */
+    width: 100%;
+    align-items: flex-start;
+}
+
+.tab {
+    flex-shrink: 0;
+    display:flex;
+    flex-direction: column;
+    width: 200px;
+    overflow: hidden;
+    /* border: 1px solid #ccc; */
+    background-color: none;
+}
+
+.tab button {
+    background-color: inherit;
+    float: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition:0.3s;
+    width: 100%;
+    text-align: left;
+    color: white;
+}
+
+.tab button:hover {
+    /* background-color: #ddd; */
+}
+
+.tab button.active {
+    /* background-color: #ccc; */
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    height: 50rem;
+    width: 75rem;
+    min-width: 350px;
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 2rem;
+    background: #222;
+}
+
+.tabcontent#att {
+    display: block;
+}
+
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 
 /* Contact Flip Box Styles */
 .contact-flip-container {
@@ -117,8 +185,8 @@ section {
     height: 100%;
 }
 .contact-flip-box {
-    width: 1vw;
-    height: 1vw;
+    width: 20rem;
+    height: 25rem;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s cubic-bezier(.4,2,.6,1);
@@ -153,7 +221,3 @@ section {
 /* Hide old contact-box if present */
 .contact-box { display: none !important; }
 
-.link {
-    /* color: var(--selected-color); */
-    text-decoration-line: underline;
-}
