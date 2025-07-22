@@ -7,6 +7,10 @@
     --pre-title-color: #64ff79;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--background-color);
     margin: 0px;
@@ -75,7 +79,8 @@ h3 {
 }
 
 .intro, .about, .work, .projects {
-    max-width:30vw;
+    max-width:50vw;
+    width: 600px;
 }
 
 section{
@@ -100,9 +105,15 @@ section {
 
 }
 
+
 .link {
     /* color: var(--selected-color); */
     text-decoration-line: underline;
+}
+
+.image_container {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* Work Section Styles */
@@ -227,4 +238,27 @@ section {
 
 /* Hide old contact-box if present */
 .contact-box { display: none !important; }
+
+/* Home Section Container Flex Layout */
+#home .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+#home .text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home .image_container {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 
