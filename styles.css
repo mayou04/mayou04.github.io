@@ -78,9 +78,14 @@ h3 {
     color: var(--subtitle-color);
 }
 
-.intro, .about, .work, .projects {
+.intro {
     max-width:50vw;
-    width: 600px;
+    width: 500px;
+}
+
+.about, .work, .projects {
+    max-width:50vw;
+    width: 650px;
 }
 
 section{
