@@ -6,14 +6,16 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="media/icon.svg" type="image/x-icon" />
     <script src="js/script.js" type="text/javascript"></script>
+    <div id="imgModal" class="img-modal">
+        <span class="img-modal-close">&times;</span>
+        <img class="img-modal-content" id="imgModalImg">
+    </div>
 </head>
 <!--Scroll effect :) background move-->
 <!--Link for home page?-->
 <!--Minimum spacing/height/width for page
     So zooming in isn't bugged-->
 <!--How to scroll lock in-->
-<!--Spacing to separate pages
-    Horizontal bar-->
 <!--Mobile Website-->
 <!--Navbar disappear once zoomed in enough-->
 <!--WHen alt-tabbing tab is stretched?-->
@@ -50,47 +52,57 @@
                     </div>
                 </div>
                 <div class="image-container">
-                    <img src="media/you_could_do_it.jpg" height="500px">
+                    <img src="media/professional_photo.jpg" style="height:250px">
                 </div>
             </div>
         </section>
         <section id="about" class="no-table">
             <div class="container">
-                <div class="image-container">
-                    <img src="media/professional_photo.jpg" style="height:250px">
-                    <!-- <img src="missing.png" alt="" style="height:250px; width:250px;"> -->
-                    <!--Images could be cycling-->
-                </div>
-                <div class="text-content">
-                    <h1>About Me</h1>
-                    <p class="about">
-                        I have experience in IT Customer Service, leading group projects, working as a team, Cybersecurity and AI.
-                        I am interested in the field of Software Engineering. Specializing in Cybersecurity. 
-                        I love solving logic puzzles and thinking outside the box. 
-                        <br><br>
-                        In my free time, I like playing video games, editing videos, cooking, playing the ukelele, 
-                        and drawing either artworks or working on my comic<sup>TM</sup>.
-                    </p>
-                    <!--Put drawings as decoration-->
+                <div class="about-flex">
+                    <div class="slideshow-container" style="margin-right:2rem; min-width: 260px;">
+                        <img class="drawing-slide" src="media/120.jpg" alt="Drawing 1" style="display:block;">
+                        <img class="drawing-slide" src="media/sukuna_vs_jogo.png" alt="Drawing 2" style="display:none;">
+                        <img class="drawing-slide" src="media/yuta_jjk.jpg" alt="Drawing 3" style="display:none;">
+                        <img class="drawing-slide" src="media/you_could_do_it.jpg" alt="Drawing 4" style="display:none;">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <div class="text-content">
+                        <h1>About Me</h1>
+                        <p class="about">
+                            I have experience in IT Customer Service, leading group projects, working as a team, Cybersecurity and AI.
+                            I am interested in the field of Software Engineering. Specializing in Cybersecurity. 
+                            I love solving logic puzzles and thinking outside the box. 
+                            <br><br>
+                            In my free time, I like playing video games, editing videos, cooking, playing the ukelele, 
+                            and drawing either artworks or working on my comic<sup>TM</sup>.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="work">
             <div class="container">
-                <div>
-                    <h1>Work</h1>
-                </div>
                 <div class="work-tabs-wrapper">
                     <div class="tab">
-                        <!--Maybe like a dropdown/table kind stuff with title and u click -> description-->
-                        <!--https://www.w3schools.com/howto/howto_js_tabs.asp-->
+                        <div>
+                            <h1>Work</h1>
+                        </div>
                         <button class="tablinks active" onclick="openTab(event, 'att')">AT&T</button>
                         <button class="tablinks" onclick="openTab(event, 'doit')">Department of IT, SBU</button>
                         <button class="tablinks" onclick="openTab(event, 'hst')">Campus Residences, SBU</button>
                     </div>
                     <div id="att" class="tabcontent">
-                        <h4>Cybersecurity Intern @ Cyber Security Data Analytics, AT&T</h4>
-                        <span>Jun 2025 - Present</span>
+                        <div class="tabcontent-header">
+                            <div>
+                                <h3>
+                                    <img src="media/AT&T_Globe_2016.svg" alt="AT&T Logo" style="height:25px; width:25px;">
+                                    Cybersecurity Intern
+                                </h3>
+                            </div>
+                            <span class="date">Jun 2025 - Present</span>
+                        </div>
+                        <h4>Cyber Security Data Analytics, AT&T</h4>
                         <p class="work">
                             I am currently interning at AT&T as a Cybersecurity AI Intern. My role involves working on various projects related to cybersecurity and artificial intelligence, gaining hands-on experience in the field.
                             <ul>
@@ -99,10 +111,21 @@
                                 <li>Gaining hands-on experience in the field</li>
                             </ul>
                         </p>
+                        <div>
+                            <img class="centered-img" src="media/ATT_Interns.jpg" alt="AT&T Photo" style="height:150px;">
+                        </div>
                     </div>
                     <div id="doit" class="tabcontent">
-                        <h4>Student Technologist @ Stony Brook University</h4>
-                        <span>Jun 2024 - Present</span>
+                        <div class="tabcontent-header">
+                            <div>
+                                <h3>
+                                    <img src="media/SBU-Emblem.png" alt="SBU Logo" style="height:25px; width:25px;">
+                                    Student Technologist
+                                </h3>
+                            </div>
+                            <span class="date">Jun 2024 - Present</span>
+                        </div>
+                        <h4>Department of Information Technology, Stony Brook University</h4>
                         <p class="work">
                             I worked at the Department of Information Technology (DoIT) at Stony Brook University, where I provided IT customer service and support to students and faculty, helping them with various technical issues.
                             <ul>
@@ -111,19 +134,32 @@
                                 <li>Assisting students and faculty with technical issues</li>
                             </ul>
                         </p>
+                        <div>
+                            <img class="centered-img" src="media/DoIT.jpg" alt="DoIT Photo" style="height:150px;">
+                        </div>
                     </div>
                     <div id="hst" class="tabcontent">
-                        <h4>Health and Safety Worker @ Stony Brook University</h4>
-                        <span>Aug 2023 - Present</span>
+                        <div class="tabcontent-header">
+                            <div>
+                                <h3>
+                                    <img src="media/SBU-Emblem.png" alt="SBU Logo" style="height:25px; width:25px;">                                
+                                    Health and Safety Worker
+                                </h3>
+                            </div>
+                            <span class="date">Aug 2023 - Present</span>
+                        </div>
+                        <h4>Campus Residences, Stony Brook University</h4>
                         <p class="work">
-                            As a Health and Safety Worker, I was responsible for ensuring the safety and well-being of students and staff on campus. 
-                            This involved conducting safety inspections, assisting in emergency response efforts, and promoting health and safety awareness.
+                            As a Health and Safety Worker, I am responsible for ensuring the safety and well-being of students and staff on campus. 
+                            This involves conducting safety inspections, assisting in emergency response efforts, and promoting health and safety awareness.
                             <ul>
                                 <li>Conducting safety inspections</li>
-                                <li>Assisting in emergency response efforts</li>
                                 <li>Promoting health and safety awareness</li>
                                 <li>Ensuring the safety and well-being of students and staff on campus</li>
                         </p>
+                        <div>
+                            <img class="centered-img" src="media/hst.jpg" alt="DoIT Photo" style="height:150px;">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -135,19 +171,56 @@
                     <h1>Projects</h1>
                     <hr>
                 </div>
-                <div>
-                    <!--Interactive Project Part-->
-                    <p class="projects">
-                        I have created numerous projects throughout my lifetime, some for school, some for my personal objectives. Some of them are:
-                    </p>
-                    <ul>
-                        <li>Portfolio</li>
-                        <li>Enigma Machine</li>
-                        <li>Reddit Clone</li>
-                        <li>Sudoku Solver</li>
-                        <li>Battle of the Brook</li>
-                    </ul>
-                    <p>Links will be provided soon!</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-img">
+                            <img src="media/portfolio.jpeg" alt="Portfolio Screenshot">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Portfolio Website (2025)</h3>
+                            <p>A personal website to showcase my work, projects, and contact information.</p>
+                            <div class="tech-stack">
+                            </div>
+                            <a class="project-link" href="https://mayou04.github.io" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Enigma Machine (2024)</h3>
+                            <p>A digital simulation of the historic Enigma encryption machine, built for educational purposes.</p>
+                            <div class="tech-stack">
+                            </div>
+                            <a class="project-link" href="https://github.com/mayou04/enigma-machine" target="_blank">View Project</a>
+                        </div>
+                        <div class="timeline-img">
+                            <img src="media/enigma.png" alt="Enigma Machine Screenshot">
+                        </div>
+                    </div>
+                    <!-- Add more projects as needed -->
+                    <div class="timeline-item">
+                        <div class="timeline-img">
+                            <img src="media/reddit-clone.jpg" alt="Enigma Machine Screenshot">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Fake Reddit (2024)</h3>
+                            <p>A clone of Reddit built with modern web technologies.</p>
+                            <div class="tech-stack">
+                            </div>
+                            <a class="project-link" href="https://github.com/mayou04/enigma-machine" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Sudoku Solver (2024)</h3>
+                            <p>A python-based application that solves Sudoku puzzles using backtracking algorithms.</p>
+                            <div class="tech-stack">
+                            </div>
+                            <a class="project-link" href="https://github.com/mayou04/enigma-machine" target="_blank">View Project</a>
+                        </div>
+                        <div class="timeline-img">
+                            <img src="media/missing.jpg" alt="Enigma Machine Screenshot">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

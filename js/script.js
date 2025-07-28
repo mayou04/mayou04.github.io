@@ -16,7 +16,7 @@ const observer = new IntersectionObserver(entries => {
 }, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.6
+    threshold: 0.3
 });
 
     sections.forEach(section => {
@@ -36,7 +36,42 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Slideshow for drawings
+let drawingSlideIndex = 1;
+let drawingSlideTimer = null;
 
+function showDrawingSlide(n) {
+    const slides = document.querySelectorAll('.drawing-slide');
+    if (slides.length === 0) return;
+    if (n > slides.length) drawingSlideIndex = 1;
+    if (n < 1) drawingSlideIndex = slides.length;
+    slides.forEach((slide, i) => {
+        slide.style.display = (i === drawingSlideIndex - 1) ? 'block' : 'none';
+    });
+}
+
+function plusSlides(n) {
+    showDrawingSlide(drawingSlideIndex += n);
+    resetDrawingSlideshowTimer();
+}
+
+function autoAdvanceDrawingSlide() {
+    drawingSlideIndex++;
+    showDrawingSlide(drawingSlideIndex);
+    drawingSlideTimer = setTimeout(autoAdvanceDrawingSlide, 3000); // 3 seconds
+}
+
+function resetDrawingSlideshowTimer() {
+    clearTimeout(drawingSlideTimer);
+    drawingSlideTimer = setTimeout(autoAdvanceDrawingSlide, 3000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    showDrawingSlide(drawingSlideIndex);
+    drawingSlideTimer = setTimeout(autoAdvanceDrawingSlide, 3000);
+});
+
+// Work Table
 function openTab(evt, cityName) {
   var i, tabcontent, tablinks;
 
@@ -53,3 +88,22 @@ function openTab(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 } 
+
+// Image zoom modal
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.centered-img').forEach(function(img) {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function() {
+      var modal = document.getElementById('imgModal');
+      var modalImg = document.getElementById('imgModalImg');
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+    });
+  });
+  document.querySelector('.img-modal-close').onclick = function() {
+    document.getElementById('imgModal').style.display = 'none';
+  };
+  document.getElementById('imgModal').onclick = function(e) {
+    if (e.target === this) this.style.display = 'none';
+  };
+});
