@@ -50,25 +50,25 @@ function showDrawingSlide(n) {
     });
 }
 
-function plusSlides(n) {
-    showDrawingSlide(drawingSlideIndex += n);
-    resetDrawingSlideshowTimer();
-}
+// function plusSlides(n) {
+//     showDrawingSlide(drawingSlideIndex += n);
+//     resetDrawingSlideshowTimer();
+// }
 
 function autoAdvanceDrawingSlide() {
     drawingSlideIndex++;
     showDrawingSlide(drawingSlideIndex);
-    drawingSlideTimer = setTimeout(autoAdvanceDrawingSlide, 3000); // 3 seconds
+    drawingSlideTimer = setTimeout(autoAdvanceDrawingSlide, 4000); // 3 seconds
 }
 
 function resetDrawingSlideshowTimer() {
     clearTimeout(drawingSlideTimer);
-    drawingSlideTimer = setTimeout(autoAdvanceDrawingSlide, 3000);
+    drawingSlideTimer = setTimeout(autoAdvanceDrawingSlide, 4000);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     showDrawingSlide(drawingSlideIndex);
-    drawingSlideTimer = setTimeout(autoAdvanceDrawingSlide, 3000);
+    drawingSlideTimer = setTimeout(autoAdvanceDrawingSlide, 4000);
 });
 
 // Work Table
