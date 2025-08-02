@@ -50,10 +50,10 @@ function showDrawingSlide(n) {
     });
 }
 
-// function plusSlides(n) {
-//     showDrawingSlide(drawingSlideIndex += n);
-//     resetDrawingSlideshowTimer();
-// }
+function plusSlides(n) {
+    showDrawingSlide(drawingSlideIndex += n);
+    resetDrawingSlideshowTimer();
+}
 
 function autoAdvanceDrawingSlide() {
     drawingSlideIndex++;
