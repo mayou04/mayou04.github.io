@@ -40,15 +40,27 @@ window.addEventListener('DOMContentLoaded', () => {
 let drawingSlideIndex = 1;
 let drawingSlideTimer = null;
 
+// ...existing code...
+
 function showDrawingSlide(n) {
     const slides = document.querySelectorAll('.drawing-slide');
     if (slides.length === 0) return;
     if (n > slides.length) drawingSlideIndex = 1;
     if (n < 1) drawingSlideIndex = slides.length;
+
     slides.forEach((slide, i) => {
-        slide.style.display = (i === drawingSlideIndex - 1) ? 'block' : 'none';
+        slide.classList.remove('active');
+        slide.style.display = 'none';
     });
+
+    const currentSlide = slides[drawingSlideIndex - 1];
+    currentSlide.style.display = 'block';
+    // Force reflow for transition
+    void currentSlide.offsetWidth;
+    currentSlide.classList.add('active');
 }
+
+// ...existing code...
 
 function plusSlides(n) {
     showDrawingSlide(drawingSlideIndex += n);
