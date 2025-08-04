@@ -12,7 +12,6 @@
     </div>
 </head>
 <!--Scroll effect :) background move-->
-<!--Link for home page?-->
 <!--Minimum spacing/height/width for page
     So zooming in isn't bugged-->
 <!--How to scroll lock in-->
@@ -218,7 +217,10 @@
                             <div class="project-content">
                                 <h2>Fake Reddit</h2>
                                 <p>
-                                    A clone of Reddit built with modern web technologies.
+                                     A full-stack web application inspired by Reddit, built using React (front end), 
+                                     Node.js with Express (server), and MongoDB (database). Supports user registration, 
+                                     authentication (with secure password hashing via bcrypt), community and post creation, 
+                                     upvoting/downvoting with a reputation system, and content moderation tools.   
                                 </p>
                                 <div class="tech-stack">
                                     <span class="tech">React</span>
@@ -249,26 +251,32 @@
             </div>
         </section>
         <section id="contact">
-            <!--Card swipe maybe, or multiple for each one-->
-            <div>
-                <h1>My Contact Information</h1>
-            </div>
-            <div class="contact-flip-container">
-                <div class="contact-flip-box" id="contactFlipBox">
-                    <div class="contact-flip-front">
-                        Contact
+            <div class="credit-card-container">
+                <div class="credit-card" id="creditCard">
+                    <div class="credit-card-front">
+                        <div class="chip"></div>
+                        <div class="card-title">Contact Card</div>
+                        <div class="card-name">Martin You</div>
+                        <div class="swipe-hint">Click to Flip</div>
                     </div>
-                    <div class="contact-flip-back">
-                        <div>
-                            <p style="font-size:1em;">
-                                <a class="link" target="_blank" href="https://www.linkedin.com/in/martin-you04">linkedin.com/in/martin-you04</a><br><br>
-                                <a class="link" target="_blank" href="https://github.com/mayou04">github.com/mayou04</a><br><br>
-                                <a class="link" href="mailto: martin.you04@gmail.com">martin.you04@gmail.com</a>
-                            </p>
+                    <div class="credit-card-back">
+                        <div class="contact-info">
+                            <div class="contact-icons">
+                                <a class="link" target="_blank" href="https://www.linkedin.com/in/martin-you04">
+                                    <img src="media/icons/linkedin.svg" alt="LinkedIn Icon">
+                                </a>
+                                <a class="link" target="_blank" href="https://github.com/mayou04">
+                                    <img src="media/icons/github.svg" alt="GitHub Icon">
+                                </a>
+                                <a class="link" href="mailto:martin.you04@gmail.com">
+                                    <img src="media/icons/email.svg" alt="Email Icon">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!--Resume here-->
         </section>
     </div>
 </body>

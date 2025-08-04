@@ -119,3 +119,23 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.target === this) this.style.display = 'none';
   };
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const card = document.getElementById('creditCard');
+    if (!card) return;
+
+    // Prevent icon clicks from flipping the card
+    card.querySelectorAll('.contact-icons a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
+
+    // Flip on click/tap
+    card.addEventListener('click', function(e) {
+        if (card._dragging) return;
+        card.classList.toggle('flipped');
+    });
+
+    // ...existing drag/swipe code...
+});
