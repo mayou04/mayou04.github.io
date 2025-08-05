@@ -23,6 +23,7 @@
 <body>
     <div class="navbar">
         <!--Navbar not take whole screen?-->
+        <img src="media/icons/logo.png" alt="Logo" class="navbar-logo">
         <div class="links">
             <a class="view" href="#home">Home</a>
             <a class="view" href="#about">About</a>
@@ -35,7 +36,7 @@
         <section id="home" class="no-table">
             <div class="container">
                 <div class="text-content">
-                    <h1>Welcome to my Portfolio !</h1>
+                    <h1>Welcome to my portfolio !</h1>
                     <div class="big-heading">
                         <h2>I'm Martin You</h2>
                     </div>
@@ -44,40 +45,49 @@
                     </div>
                     <div >
                         <p class="intro">
-                            I am a rising senior at Stony Brook University, majoring in Computer Science and specializing in Cybersecurity. 
-                            I am currently working at AT&T as a Cybersecurity AI Intern.
-                            <br><br>
-                            I like making cool stuff :)
-                            <br><br>
+                            My creativity helps me think outside the box, <br>
+                            my technical skills bring them to life.
+                            <!-- Big fan of clean code, clever design, and video games that make you think. -->
                         </p>
                     </div>
                 </div>
                 <div class="image-container">
-                    <img src="media/pictures/professional_photo.jpg" style="height:250px">
+                    <img id="portrait" src="media/pictures/professional_photo.jpg" style="height:250px">
                 </div>
             </div>
         </section>
         <section id="about" class="no-table">
             <div class="container">
                 <div class="about-flex">
-                    <div class="slideshow-container" style="margin-right:2rem; min-width: 260px;">
-                        <img class="drawing-slide" src="media/drawings/120.jpg" alt="Drawing 1" style="display:block;">
-                        <img class="drawing-slide" src="media/drawings/jolyne.jpg" alt="Drawing 2" style="display:none;">
-                        <img class="drawing-slide" src="media/drawings/sukuna_vs_jogo.png" alt="Drawing 3" style="display:none;">
-                        <img class="drawing-slide" src="media/drawings/you_could_do_it.jpg" alt="Drawing 4" style="display:none;">
-                        <img class="drawing-slide" src="media/drawings/yuta_jjk.jpg" alt="Drawing 5" style="display:none;">
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <div class="images" style="margin-right:2rem; ">
+                        <div class="slideshow-container" style="min-width: 260px;">
+                            <img class="drawing-slide" src="media/drawings/120.jpg" alt="Drawing 1" style="display:block;">
+                            <img class="drawing-slide" src="media/drawings/jolyne.jpg" alt="Drawing 2" style="display:none;">
+                            <img class="drawing-slide" src="media/drawings/sukuna_vs_jogo.png" alt="Drawing 3" style="display:none;">
+                            <img class="drawing-slide" src="media/drawings/you_could_do_it.jpg" alt="Drawing 4" style="display:none;">
+                            <img class="drawing-slide" src="media/drawings/yuta_jjk.jpg" alt="Drawing 5" style="display:none;">
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <div class="slideshow-dots">
+                            <span class="dot" onclick="currentDrawingSlide(1)"></span>
+                            <span class="dot" onclick="currentDrawingSlide(2)"></span>
+                            <span class="dot" onclick="currentDrawingSlide(3)"></span>
+                            <span class="dot" onclick="currentDrawingSlide(4)"></span>
+                            <span class="dot" onclick="currentDrawingSlide(5)"></span>
+                        </div>
                     </div>
                     <div class="text-content">
                         <h1>About Me</h1>
                         <p class="about">
-                            I have experience in IT Customer Service, leading group projects, working as a team, Cybersecurity and AI.
-                            I am interested in the field of Software Engineering. Specializing in Cybersecurity. 
-                            I love solving logic puzzles and thinking outside the box. 
+                            Rising senior at Stony Brook University majoring in Computer Science 
+                            with a focus on Cybersecurity. 
+                            Currently working at AT&T as a Cybersecurity AI Intern.
                             <br><br>
-                            In my free time, I like playing video games, editing videos, cooking, playing the ukelele, 
-                            and drawing either artworks or working on my comic<sup>TM</sup>.
+                            Experienced in IT support, collaborative development, with a strong interest in Software Engineering, Security and AI. 
+                            Passionate about logic puzzles, creative problem-solving, and building practical, impactful tools.
+                            <br><br>
+                            Outside of tech, I enjoy video games, editing videos, cooking, drawing comics, and occasionally strumming on the ukulele.
                         </p>
                     </div>
                 </div>
@@ -171,26 +181,6 @@
             <div class="container">
                 <h1>Projects</h1>
                 <div class="project-grid">
-                    <a class="project-card-link" href="https://mayou04.github.io" target="_blank">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="media/projects/portfolio.png" alt="Portfolio Screenshot">
-                            </div>
-                            <div class="project-content">
-                                <h2>Portfolio Website</h2>
-                                <p>
-                                    This portfolio website showcases my experiences, projects, and skills.
-                                    Built using simple HTML, CSS and JavaScript, with fun interactive elements, 
-                                    fun to play around, AND learn more about me!
-                                </p>
-                                <div class="tech-stack">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
                     <a class="project-card-link" href="https://github.com/mayou04/enigma_machine" target="_blank">
                         <div class="project-card">
                             <div class="project-image">
@@ -247,10 +237,33 @@
                             </div>
                         </div>
                     </a>
+                    <a class="project-card-link" href="https://mayou04.github.io" target="_blank">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="media/projects/portfolio.png" alt="Portfolio Screenshot">
+                            </div>
+                            <div class="project-content">
+                                <h2>Portfolio Website</h2>
+                                <p>
+                                    This portfolio website showcases my experiences, projects, and skills.
+                                    Built using simple HTML, CSS and JavaScript, with fun interactive elements, 
+                                    fun to play around, AND learn more about me!
+                                </p>
+                                <div class="tech-stack">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
         <section id="contact">
+            <h3>
+                Here's my contact card :)
+            </h3>
             <div class="credit-card-container">
                 <div class="credit-card" id="creditCard">
                     <div class="credit-card-front">
@@ -261,6 +274,7 @@
                     </div>
                     <div class="credit-card-back">
                         <div class="contact-info">
+                            <div class="swipe-hint">Click on icons</div>
                             <div class="contact-icons">
                                 <a class="link" target="_blank" href="https://www.linkedin.com/in/martin-you04">
                                     <img src="media/icons/linkedin.svg" alt="LinkedIn Icon">
@@ -276,7 +290,11 @@
                     </div>
                 </div>
             </div>
-            <!--Resume here-->
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="media/resume/You_Martin_Resume.pdf" target="_blank" class="resume-btn">
+                    View My Resume
+                </a>
+            </div>
         </section>
     </div>
 </body>

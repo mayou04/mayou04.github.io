@@ -40,8 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
 let drawingSlideIndex = 1;
 let drawingSlideTimer = null;
 
-// ...existing code...
-
 function showDrawingSlide(n) {
     const slides = document.querySelectorAll('.drawing-slide');
     if (slides.length === 0) return;
@@ -59,8 +57,6 @@ function showDrawingSlide(n) {
     void currentSlide.offsetWidth;
     currentSlide.classList.add('active');
 }
-
-// ...existing code...
 
 function plusSlides(n) {
     showDrawingSlide(drawingSlideIndex += n);
@@ -82,6 +78,32 @@ document.addEventListener('DOMContentLoaded', function() {
     showDrawingSlide(drawingSlideIndex);
     drawingSlideTimer = setTimeout(autoAdvanceDrawingSlide, 4000);
 });
+
+function showDrawingSlide(n) {
+    const slides = document.querySelectorAll('.drawing-slide');
+    const dots = document.querySelectorAll('.slideshow-dots .dot');
+    if (slides.length === 0) return;
+    if (n > slides.length) drawingSlideIndex = 1;
+    if (n < 1) drawingSlideIndex = slides.length;
+
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        slide.style.display = 'none';
+    });
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    const currentSlide = slides[drawingSlideIndex - 1];
+    currentSlide.style.display = 'block';
+    void currentSlide.offsetWidth;
+    currentSlide.classList.add('active');
+    if (dots[drawingSlideIndex - 1]) dots[drawingSlideIndex - 1].classList.add('active');
+}
+
+function currentDrawingSlide(n) {
+    drawingSlideIndex = n;
+    showDrawingSlide(n);
+    resetDrawingSlideshowTimer();
+}
 
 // Work Table
 function openTab(evt, cityName) {
@@ -136,6 +158,4 @@ document.addEventListener('DOMContentLoaded', function() {
         if (card._dragging) return;
         card.classList.toggle('flipped');
     });
-
-    // ...existing drag/swipe code...
 });
