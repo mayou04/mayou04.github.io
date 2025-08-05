@@ -63,7 +63,6 @@ a {
     top: 0;     
     z-index: 85;
     padding: 0 2rem;
-    user-drag: none;
     -webkit-user-drag: none;
     user-select: none;
     -webkit-user-select: none;
@@ -232,7 +231,7 @@ section {
 }
 .slideshow-container .prev:hover,
 .slideshow-container .next:hover {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.9);
 }
 .slideshow-container .prev {
     left: 0;
