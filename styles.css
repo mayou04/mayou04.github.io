@@ -451,11 +451,11 @@ img {
     border: 1px solid var(--accent-green, #4fc3f7);
 }
 
-.tech-stack span:hover {
-  /* box-shadow: 0 0 8px var(--primary-green), 0 0 16px var(--accent-green);
+/* .tech-stack span:hover {
+  box-shadow: 0 0 8px var(--primary-green), 0 0 16px var(--accent-green);
   color: var(--background-color);
-  transition: box-shadow 0.2s, color 0.2s, background 0.2s; */
-}
+  transition: box-shadow 0.2s, color 0.2s, background 0.2s;
+} */
 
 .project-grid {
   display: grid;
